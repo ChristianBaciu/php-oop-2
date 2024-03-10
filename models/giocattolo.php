@@ -1,9 +1,10 @@
 <?php 
     class giocattolo_shop extends cibo_shop{
 
-        public function __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo, $_altro, $_immagine)
+        public function __construct($_title, $_price, $_n_price, $_type, $_other, $_immagine, $_animal)
         {
-            parent:: __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo, $_altro, $_immagine);
+            // con parent prendo tutti i this dal padre 'cibo_shop'
+            parent:: __construct($_title, $_price, $_n_price, $_type, $_other, $_immagine, $_animal);
         }
     }
 ?>
