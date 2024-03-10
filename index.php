@@ -1,13 +1,13 @@
 <?php 
 
     include_once __DIR__ . '/models/oggetto.php';
-    $collare = new oggetto_collare('Collare', 'Price', '12'.'€', 'Product');
+    $collare = new oggetto_shop('Collare', 'Price', '12'.'€', 'Product');
 
     include_once __DIR__ . '/models/cibo.php';
-    $cibo = new cibo_collare('Crocchete', 'Price', '12'.'€', 'Food', '200');
+    $cibo = new cibo_shop('Crocchete 1kg', 'Price', '12'.'€', 'Food', '200');
 
     // include_once __DIR__ . '/models/giocattolo.php';
-    // $giocattolo = new giocattolo_collare();
+    // $giocattolo = new giocattolo_shop('Palla da tennis', 'Price', '10'.'€', 'Game', 'ball');
 
     // array
     
@@ -71,13 +71,16 @@
                             </p>
     
                             <p>
-                                calories: <?= $cibo->getCalorie() ?>
+                                calories: <?= $cibo->get_alte_info() ?>
                             </p>
                         </div>
 
                     </div>
                 </div>
             </div> 
+
+
+
 
             <div class="col">
                 <div class="card">

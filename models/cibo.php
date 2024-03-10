@@ -1,34 +1,20 @@
 <?php 
-    class cibo_collare{
-        public $titolo;
-        public $prezzo;  
-        public $numero_prezzo;
-        public $tipo;
-        public $calorie;
+    class cibo_shop extends oggetto_shop{
+        public $altre_info;
 
-        public function __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo, $_calorie)
+        public function __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo, $_altre_info)
         {
-            $this->titolo = $_titolo;
-            $this->prezzo = $_prezzo;
-            $this->numero_prezzo = $_numero_prezzo;
-            $this->tipo = $_tipo;
-            $this->calorie = $_calorie;
+            // con parent prendo tutti i this dal padre 'oggetto_shop'
+            parent:: __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo);
+            // $this->titolo = $_titolo;
+            // $this->prezzo = $_prezzo;
+            // $this->numero_prezzo = $_numero_prezzo;
+            // $this->tipo = $_tipo;
+            $this->altre_info = $_altre_info;
         }
 
-        public function getPrezzo(){
-            return $this->prezzo . " " . $this->numero_prezzo;
-        }
-
-        public function getTitolo(){
-            return $this->titolo;
-        }
-
-        public function getTipo(){
-            return $this->tipo;
-        }
-
-        public function getCalorie(){
-            return $this->calorie;
+        public function get_alte_info(){
+            return $this->altre_info;
         }
     }
 ?>

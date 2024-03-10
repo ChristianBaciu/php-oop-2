@@ -1,9 +1,9 @@
 <?php 
-    class oggetto_collare{
+    class oggetto_shop{
         public $titolo;
-        public $prezzo;  
-        public $numero_prezzo;
-        public $tipo;
+        protected $prezzo;  
+        private $numero_prezzo;
+        protected $tipo;
 
 
         public function __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo)
