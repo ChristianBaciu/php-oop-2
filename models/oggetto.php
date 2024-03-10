@@ -5,7 +5,6 @@
         private $numero_prezzo;
         protected $tipo;
 
-
         public function __construct($_titolo, $_prezzo, $_numero_prezzo, $_tipo)
         {
             $this->titolo = $_titolo;

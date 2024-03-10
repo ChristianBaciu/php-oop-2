@@ -6,8 +6,8 @@
     include_once __DIR__ . '/models/cibo.php';
     $cibo = new cibo_shop('Crocchete 1kg', 'Price', '12'.'€', 'Food', '200');
 
-    // include_once __DIR__ . '/models/giocattolo.php';
-    // $giocattolo = new giocattolo_shop('Palla da tennis', 'Price', '10'.'€', 'Game', 'ball');
+    include_once __DIR__ . '/models/giocattolo.php';
+    $giocattolo = new giocattolo_shop('Palla da tennis', 'Price', '10'.'€', 'Game', 'ball');
 
     // array
     
@@ -86,11 +86,24 @@
                 <div class="card">
                     <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
                     <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Text</p>
+
+                        <h4 class="card-title"><?= $giocattolo->getTitolo() ?></h4>
+                        <p class="card-text"><?= $giocattolo->getPrezzo() ?></p>
+
+                        <div class="d-flex justify-content-between">
+                            <p>
+                                type: <?= $giocattolo->getTipo() ?>
+                            </p>
+    
+                            <p>
+                                calories: <?= $giocattolo->get_alte_info() ?>
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div> 
+
 
         </div>
     </div>
