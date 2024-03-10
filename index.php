@@ -1,15 +1,16 @@
 <?php 
-
     include_once __DIR__ . '/models/oggetto.php';
-    $collare = new oggetto_shop('Collare', 'Price', '12'.'€', 'Product');
+    $collare = new oggetto_shop('Collare', 'Price', '12'.'€', 'Product', "", './img/2.jpg');
 
     include_once __DIR__ . '/models/cibo.php';
-    $cibo = new cibo_shop('Crocchete 1kg', 'Price', '12'.'€', 'Food', '200');
+    $crocchette = new cibo_shop('Crocchete 1kg', 'Price', '12'.'€', 'Food', 'Calories: 200','./img/1.jpg');
 
     include_once __DIR__ . '/models/giocattolo.php';
-    $giocattolo = new giocattolo_shop('Palla da tennis', 'Price', '10'.'€', 'Game', 'ball');
+    $tennis = new giocattolo_shop('Palla da tennis', 'Price', '10'.'€', 'Game', 'Genre: ball','./img/3.jpg');
 
-    // array
+    $array_pet_shop = [
+        $collare, $crocchette, $tennis
+    ];
     
 ?>
 
@@ -42,7 +43,34 @@
     <div class="container">
         <div class="row">
 
+            <?php foreach($array_pet_shop as $element):?>
             <div class="col">
+                <div class="card">
+
+
+                    <img class="card-img-top" src="<?= $element->get_img() ?>" alt="Title" />
+                    <div class="card-body">
+
+                        <h4 class="card-title"><?= $element->get_titolo() ?></h4>
+                        <p class="card-text"><?= $element->get_prezzo() ?></p>
+
+                        <div class="d-flex justify-content-between">
+                            <p>
+                                type: <?= $element->get_tipo() ?>
+                            </p>
+
+                            <p>
+                                <?= $element->get_altro() ?>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div> 
+            <?php endforeach; ?>
+
+
+            <!-- <div class="col">
                 <div class="card">
                     <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
                     <div class="card-body">
@@ -62,48 +90,44 @@
                     <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
                     <div class="card-body">
 
-                        <h4 class="card-title"><?= $cibo->getTitolo() ?></h4>
-                        <p class="card-text"><?= $cibo->getPrezzo() ?></p>
+                        <h4 class="card-title"><?= $crocchette->getTitolo() ?></h4>
+                        <p class="card-text"><?= $crocchette->getPrezzo() ?></p>
 
                         <div class="d-flex justify-content-between">
                             <p>
-                                type: <?= $cibo->getTipo() ?>
+                                type: <?= $crocchette->getTipo() ?>
                             </p>
     
                             <p>
-                                calories: <?= $cibo->get_alte_info() ?>
+                                calories: <?= $crocchette->get_alte_info() ?>
                             </p>
                         </div>
 
                     </div>
                 </div>
             </div> 
-
-
-
 
             <div class="col">
                 <div class="card">
                     <img class="card-img-top" src="holder.js/100x180/" alt="Title" />
                     <div class="card-body">
 
-                        <h4 class="card-title"><?= $giocattolo->getTitolo() ?></h4>
-                        <p class="card-text"><?= $giocattolo->getPrezzo() ?></p>
+                        <h4 class="card-title"><?= $tennis->getTitolo() ?></h4>
+                        <p class="card-text"><?= $tennis->getPrezzo() ?></p>
 
                         <div class="d-flex justify-content-between">
                             <p>
-                                type: <?= $giocattolo->getTipo() ?>
+                                type: <?= $tennis->getTipo() ?>
                             </p>
     
                             <p>
-                                calories: <?= $giocattolo->get_alte_info() ?>
+                                calories: <?= $tennis->get_alte_info() ?>
                             </p>
                         </div>
 
                     </div>
                 </div>
-            </div> 
-
+            </div>  -->
 
         </div>
     </div>
