@@ -13,16 +13,15 @@
     ];
     // var_dump($array_pet_shop);
 
+    
     require_once __DIR__ . "/models/Cane.php";
     require_once __DIR__ . "/models/Animale.php";
 
-    $prova = new Cane('Cane');
-    $prova->set_informazioni_animale('baobaobao');
-
-    var_dump($prova);
-
-    
-
+    $animale = new Cane('Labrador ');
+    $animale->set_informazioni_animale('info del cucciolo ecc...');
+    $animale->set_animale_img('./img/4.png');
+    $animale->set_animale_eta('6 anni' );
+    // var_dump($animale);
 ?>
 
 <!DOCTYPE html>
@@ -89,21 +88,21 @@
                 </div> 
             <?php endforeach; ?>
 
-
-                <div class="col">
-                    <div class="card">
-                        <div class="bg-immagine">
-                            <img class="card-img-top" src="" alt="Title" />
-                            
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title"><?= $prova->get_nome_animale() ?></h4>
-                            <p class="card-text"><?= $prova->get_informazioni_animale() ?></p>
-                        </div>
+            <div class="col">
+                <div class="card">
+                    <div class="bg-immagine">
+                        <img class="card-img-top" src="<?= $animale->get_animale_img() ?>" alt="Title" />
+                        
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"><?= $animale->get_nome_animale() ?></h4>
+                        <p class="card-text"><?= $animale->get_informazioni_animale() ?></p>
+                        <p>
+                            <?= $animale->get_animale_eta() ?>
+                        </p>
                     </div>
                 </div>
-
-
+            </div>
 
         </div>
     </div>

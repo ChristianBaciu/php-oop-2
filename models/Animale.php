@@ -1,25 +1,32 @@
 <?php
-    // require_once __DIR__ . "/../traits/animals_traits.php";
-
-    // class cat_traits extends dog_traits{
-    //     // use animals_traits;
-
-    //     public function __construct($_type, $_immagine, $_icone)
-    //     {
-    //         parent:: __construct($_type, $_immagine, $_icone);
-    //     }
-    // }
-
     class Animale{
         public $nome_animale;
-    
-        public function __construct($nome_animale)
-        {
+        public $animale_img;
+        public $animale_eta;
+
+        // labrador
+        public function __construct($nome_animale){
             $this->nome_animale = $nome_animale;
         }
-    
-        public function get_nome_animale()
-        {
+        public function get_nome_animale(){
             return $this->nome_animale;
         }
-    }?>
+
+        // img
+        public function set_animale_img($img){
+            $this->animale_img = $img;
+        }
+        public function get_animale_img(){
+            return $this->animale_img;
+        }
+
+        // età
+        public function set_animale_eta($eta){
+            $this->animale_eta = $eta;
+        }
+        public function get_animale_eta(){
+            return $this->animale_eta;
+        }
+        
+    }
+?>
