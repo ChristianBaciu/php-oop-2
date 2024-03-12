@@ -11,16 +11,18 @@
     $array_pet_shop = [
         $collare, $crocchette, $tennis
     ];
+    // var_dump($array_pet_shop);
 
-    require_once __DIR__ . "/models/dog_traits.php";
-    require_once __DIR__ . "/models/cat_traits.php";
-    require_once __DIR__ . "/traits/animals_traits.php";
+    require_once __DIR__ . "/models/Cane.php";
+    require_once __DIR__ . "/models/Animale.php";
 
-    $cane = new dog_traits('Cane', '1','2','3','4');
+    $prova = new Cane('Cane');
+    $prova->set_informazioni_animale('baobaobao');
 
-    $gatto = new cat_traits('Gatto', '5','6', '7','8');
+    var_dump($prova);
 
-    var_dump($cane, $gatto);
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -95,8 +97,8 @@
                             
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><?= $cane->get_animale_cane() ?></h4>
-                            <p class="card-text"><?= $cane->get_info_cane() ?></p>
+                            <h4 class="card-title"><?= $prova->get_nome_animale() ?></h4>
+                            <p class="card-text"><?= $prova->get_informazioni_animale() ?></p>
                         </div>
                     </div>
                 </div>
@@ -105,10 +107,5 @@
 
         </div>
     </div>
-
-
-
-
-
 </body>
 </html>
