@@ -1,14 +1,14 @@
 <?php 
-    class oggetto_shop{
+    class oggetto{
         public $title;
-        protected $price;  
-        private $n_price;
-        protected $type;
-        protected $other;
-        private $immagine;
-        protected $animal;
+        public $price;  
+        public $n_price;
+        public $type;
+        public $other;
+        public $immagine;
+        public $icone;
 
-        public function __construct($_title, $_price, $_n_price, $_type, $_other, $_immagine, $_animal)
+        public function __construct($_title, $_price, $_n_price, $_type, $_other, $_immagine, $_icone)
         {
             $this->title = $_title;
             $this->price = $_price;
@@ -16,7 +16,7 @@
             $this->type = $_type;
             $this->other = $_other;
             $this->immagine = $_immagine;
-            $this->animale = $_animal;
+            $this->icona = $_icone;
         }
 
         public function get_prezzo(){
@@ -39,8 +39,8 @@
             return $this->immagine;
         }
 
-        public function get_just_like_animals(){
-            return $this->animale;
+        public function get_icone(){
+            return $this->icona;
         }
     }
 ?>

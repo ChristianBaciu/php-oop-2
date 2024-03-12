@@ -1,16 +1,26 @@
 <?php 
     include_once __DIR__ . '/models/oggetto.php';
-    $collare = new oggetto_shop('Collare', 'Price', '12'.'€', 'Product', "", './img/1.PNG', '<i class="fa-solid fa-dog"></i>');
+    $collare = new oggetto('Collare', 'Price', '12'.'€', 'Product', "", './img/1.PNG', '<i class="fa-solid fa-dog"></i>');
 
     include_once __DIR__ . '/models/cibo.php';
-    $crocchette = new cibo_shop('Crocchete 1kg', 'Price', '12'.'€', 'Food', 'Calories: 200','./img/2.PNG', '<i class="fa-solid fa-dog"></i>');
+    $crocchette = new cibo('Crocchete 1kg', 'Price', '12'.'€', 'Food', 'Calories: 200','./img/2.PNG', '<i class="fa-solid fa-dog"></i>');
 
     include_once __DIR__ . '/models/giocattolo.php';
-    $tennis = new giocattolo_shop('Palla da tennis', 'Price', '10'.'€', 'Game', 'Genre: ball','./img/3.PNG', '<i class="fa-solid fa-cat"></i>');
+    $tennis = new giocattolo('Palla da tennis', 'Price', '10'.'€', 'Game', 'Genre: ball','./img/3.PNG', '<i class="fa-solid fa-cat"></i>');
 
     $array_pet_shop = [
         $collare, $crocchette, $tennis
     ];
+
+    require_once __DIR__ . "/models/dog_traits.php";
+    require_once __DIR__ . "/models/cat_traits.php";
+    require_once __DIR__ . "/traits/animals_traits.php";
+
+    $cane = new dog_traits('Cane', '1','2','3','4');
+
+    $gatto = new cat_traits('Gatto', '5','6', '7','8');
+
+    var_dump($cane, $gatto);
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +45,11 @@
         categoria ed il tipo di articolo che si sta visualizzando (prodotto, cibo, gioco, cuccia).
     -->
 
+    <!-- 
+        oggi continuate a lavorare nella stessa repo di ieri aggiungendo almeno un trait ed un exception
+        al vostro shop!
+        Buon divertimento e confermate lettura come al solito!
+    -->
 </head>
 <body>
 
@@ -44,16 +59,16 @@
         <button class="btn btn-primary">Example button</button>
     </div>
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
 
             <?php foreach($array_pet_shop as $element):?>
                 <div class="col">
                     <div class="card">
-                        <div class="ciao">
+                        <div class="bg-immagine">
                             <img class="card-img-top" src="<?= $element->get_img() ?>" alt="Title" />
                             
-                            <?= $element->get_just_like_animals() ?>
+                            <?= $element->get_icone() ?>
                         </div>
                         <div class="card-body">
                             <h4 class="card-title"><?= $element->get_titolo() ?></h4>
@@ -72,8 +87,28 @@
                 </div> 
             <?php endforeach; ?>
 
+
+                <div class="col">
+                    <div class="card">
+                        <div class="bg-immagine">
+                            <img class="card-img-top" src="" alt="Title" />
+                            
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><?= $cane->get_animale_cane() ?></h4>
+                            <p class="card-text"><?= $cane->get_info_cane() ?></p>
+                        </div>
+                    </div>
+                </div>
+
+
+
         </div>
     </div>
+
+
+
+
 
 </body>
 </html>
