@@ -1,19 +1,18 @@
 <?php 
     include_once __DIR__ . '/models/oggetto.php';
-    $collare = new oggetto('Collare', 'Price', '12'.'€', 'Product', "", './img/1.PNG', '<i class="fa-solid fa-dog"></i>');
+    $collare = new Oggetto('Collare', 'Price', '12'.'€', 'Product', './img/1.PNG', '<i class="fa-solid fa-dog"></i>');
 
     include_once __DIR__ . '/models/cibo.php';
-    $crocchette = new cibo('Crocchete 1kg', 'Price', '12'.'€', 'Food', 'Calories: 200','./img/2.PNG', '<i class="fa-solid fa-dog"></i>');
+    $crocchette = new Cibo('Crocchete 1kg', 'Price', '12'.'€', 'Food', 'Calories: 200','./img/2.PNG', '<i class="fa-solid fa-dog"></i>');
 
     include_once __DIR__ . '/models/giocattolo.php';
-    $tennis = new giocattolo('Palla da tennis', 'Price', '10'.'€', 'Game', 'Genre: ball','./img/3.PNG', '<i class="fa-solid fa-cat"></i>');
+    $tennis = new Giocattolo('Palla da tennis', 'Price', '10'.'€', 'Game', 'Genre: ball','./img/3.PNG', '<i class="fa-solid fa-cat"></i>');
 
     $array_pet_shop = [
         $collare, $crocchette, $tennis
     ];
     // var_dump($array_pet_shop);
 
-    
     require_once __DIR__ . "/models/Cane.php";
     require_once __DIR__ . "/models/Animale.php";
 
@@ -22,6 +21,25 @@
     $animale->set_animale_img('./img/4.png');
     $animale->set_animale_eta('6 anni' );
     // var_dump($animale);
+
+
+
+    // require __DIR__ . "/models/Person.php";
+
+    // $person = new Person();
+    
+    // try{
+    //     $age = $person->calcAge('ciao');
+    //     var_dump($age);
+    // } catch( Exception $e ){
+    //     echo $e->getMessage();
+    //     echo $e->xdebug_message;
+    //     var_dump($e);
+    // }
+    
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +98,11 @@
                                 </p>
 
                                 <p>
-                                    <?= $element->get_altro() ?>
+                                    <?php 
+                                        if($element instanceof Cibo){
+                                            echo "type:" . " " . $element->get_altro();
+                                        }
+                                    ?>
                                 </p>
                             </div>
                         </div>
