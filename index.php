@@ -22,24 +22,6 @@
     $animale->set_animale_eta('6 anni' );
     // var_dump($animale);
 
-
-
-    // require __DIR__ . "/models/Person.php";
-
-    // $person = new Person();
-    
-    // try{
-    //     $age = $person->calcAge('ciao');
-    //     var_dump($age);
-    // } catch( Exception $e ){
-    //     echo $e->getMessage();
-    //     echo $e->xdebug_message;
-    //     var_dump($e);
-    // }
-    
-
-
-
 ?>
 
 <!DOCTYPE html>
